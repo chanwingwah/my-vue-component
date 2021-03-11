@@ -2,6 +2,7 @@
   "name": "@chanwingwah/my-vue-component",
   "version": "0.0.1",
   "main": "dist/myComponent.umd.min.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name myComponent src/index.js",
