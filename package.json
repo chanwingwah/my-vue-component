@@ -1,6 +1,7 @@
 {
   "name": "@chanwingwah/my-vue-component",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "一个vue组件实践项目",
   "main": "dist/myComponent.umd.min.js",
   "jsnext:main": "src/index.js",
   "scripts": {
@@ -26,5 +27,19 @@
     "sass-loader": "^10.1.1",
     "svg-sprite-loader": "^5.2.1",
     "vue-template-compiler": "^2.6.11"
-  }
+  },
+  "keywords": [
+    "vue",
+    "components"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chanwingwah/my-vue-component.git"
+  },
+  "author": "chanwingwah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chanwingwah/my-vue-component/issues"
+  },
+  "homepage": "https://github.com/chanwingwah/my-vue-component#readme"
 }
