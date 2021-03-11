@@ -2,6 +2,10 @@
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg">
   </a>
+  
+  <a href="https://www.npmjs.org/package/@chanwingwah/my-vue-component">
+    <img src="https://img.shields.io/npm/v/@chanwingwah/my-vue-component.svg">
+  </a>
 </p>
 
 # my-vue-component
