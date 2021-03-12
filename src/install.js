@@ -1,8 +1,8 @@
 import Vue from "vue";
 
-import { MyIcon } from "./index";
+import { MyIcon, MyButton } from "./index";
 
-const components = [MyIcon];
+const components = [MyIcon, MyButton];
 
 const install = function(Vue) {
   components.map(component => {
