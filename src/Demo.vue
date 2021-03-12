@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    HelloWorld
+    <my-icon name="loading"></my-icon>
   </div>
 </template>
 <script>
