@@ -5,17 +5,19 @@
 </template>
 <script>
 export default {
-  name: 'MyButtonGroup',
+  name: "MyButtonGroup",
   mounted() {
     // 检查是否传入的都是按钮
     for (let node of this.$el.children) {
-      let name = node.nodeName.toLowerCase()
-      if (name !== 'button') {
-        console.warn(`my-button-group 的子元素应该全是 my-button，但是你写的是 ${name}`)
+      let name = node.nodeName.toLowerCase();
+      if (name !== "button") {
+        console.warn(
+          `my-button-group 的子元素应该全是 my-button，但是你写的是 ${name}`
+        );
       }
     }
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 $border-radius: 4px;

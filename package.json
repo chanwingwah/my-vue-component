@@ -1,6 +1,6 @@
 {
   "name": "@chanwingwah/my-vue-component",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "一个vue组件实践项目",
   "main": "dist/myComponent.umd.min.js",
   "jsnext:main": "src/index.js",

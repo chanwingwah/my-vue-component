@@ -1,15 +1,15 @@
 <template>
-  <button @click="$emit('click')"  :class="className" :disabled="disabled">
+  <button @click="$emit('click')" :class="className" :disabled="disabled">
     <div class="slot-content">
       <slot />
     </div>
-      <MyIcon v-if="iconName" class="icon" :name="iconName"></MyIcon>
+    <MyIcon v-if="iconName" class="icon" :name="iconName"></MyIcon>
   </button>
 </template>
 <script>
-import MyIcon from '../icon/icon.vue'
+import MyIcon from "../icon/icon.vue";
 export default {
-  name: 'MyButton',
+  name: "MyButton",
   components: {
     MyIcon: MyIcon
   },
@@ -19,8 +19,10 @@ export default {
       default: "default",
       des: "按钮类型",
       validator(value) {
-        return ['default', 'primary', 'success', 'warning', 'danger'].includes(value)
-      },
+        return ["default", "primary", "success", "warning", "danger"].includes(
+          value
+        );
+      }
     },
     icon: {
       type: String,
@@ -30,41 +32,41 @@ export default {
     loading: {
       type: Boolean,
       default: false,
-      des: 'loading状态'
+      des: "loading状态"
     },
     disabled: {
       type: Boolean,
       default: false,
-      des: '不可用状态'
+      des: "不可用状态"
     },
     iconPosition: {
       type: String,
-      default: 'left',
+      default: "left",
       validator(value) {
-        return value === 'left' || value === 'right'
+        return value === "left" || value === "right";
       },
       des: "图标位置"
     }
   },
   computed: {
     iconName() {
-      return this.loading ? "loading" : this.icon
+      return this.loading ? "loading" : this.icon;
     },
     className() {
-      var className = 'my-button ' + this.type
+      var className = "my-button " + this.type;
       if (this.disabled) {
-        className += " disabled"
+        className += " disabled";
       }
       if (this.iconPosition) {
-        className += ` icon-position-${this.iconPosition} `
+        className += ` icon-position-${this.iconPosition} `;
       }
       if (this.loading) {
-        className += ` loading`
+        className += ` loading`;
       }
-      return className
+      return className;
     }
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 $border-radius: 4px;
