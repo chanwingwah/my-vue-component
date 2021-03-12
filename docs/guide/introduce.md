@@ -2,7 +2,7 @@
 title: 介绍
 ---
 <p align="center" style="display:flex;justify-content:center">
-  <img height="200px" src="/my-ui/assets/images/moon-night.svg">
+  <img height="200px" src="/my-vue-component/assets/images/moon-night.svg">
 </p>
 <h1 align="center" >Simple UI</h1> 
 

@@ -6,7 +6,7 @@ module.exports = {
       'markdown-it-task-lists'
     ]
   },
-  base: '/my-ui/',
+  base: '/my-vue-component/',
   title: 'Simple UI ',
   description: '一个的UI框架实践',  
   themeConfig: {
