@@ -3,24 +3,34 @@ title: 快速上手
 ---
 
 ## 安装
-
-本章节待完善
+ 
+npm 安装
 
 ```bash
 npm install @chanwingwah/my-vue-component
 ```
 
-或
+yarn 安装
+
 
 ```bash
 yarn add @chanwingwah/my-vue-component
 ```
 
 
-本章节待完善
 
 ## Hello World
 
+
 ```javascript
+import Vue from 'vue'
+import { MyIcon, MyButton } from "@chanwingwah/my-vue-component"; // 导入组件
+import "@chanwingwah/my-vue-component/dist/myComponent.css";  // 导入样式
+
+Vue.component("MyIcon", MyIcon);
+Vue.component("MyButton", MyButton);
+new Vue({
+  el: '#app',
+})
 
 ```
