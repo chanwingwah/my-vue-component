@@ -39,6 +39,6 @@ module.exports = {
     ]
   },
   scss:{
-    includePaths: [path.join(__dirname, '../../styles')]
+    // includePaths: [path.join(__dirname, '../../styles')]
   }
 }
