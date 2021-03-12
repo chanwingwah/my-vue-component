@@ -10,6 +10,7 @@ module.exports = {
   title: 'Simple UI ',
   description: '一个的UI框架实践',  
   themeConfig: {
+    sidebarDepth:0,
     logo: '/assets/images/moon-night.svg',
     nav: [
       {text: '主页', link: '/'},
@@ -21,6 +22,7 @@ module.exports = {
       {
         title: '开发指南',
         collapsable: false,
+        sidebarDepth:2,
         children: [
           '/guide/introduce',
           '/guide/get-started',
@@ -28,7 +30,10 @@ module.exports = {
       },
       {
         title: '组件',
-        collapsable: false
+        collapsable: false,
+        children: [
+          '/components/icon'
+        ]
       },
 
     ]
