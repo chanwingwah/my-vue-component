@@ -10,7 +10,7 @@
   2、`v-on="$listeners"` v-on="$listeners" 将所有的事件监听器指向这个组件的某个特定的子元素。 
 */
 
-import "@/icon/requireSVG";
+import "./iconfont.js";
 export default {
   name: "MyIcon",
   props: {
