@@ -74,6 +74,10 @@ $primary: #409eff;
 $success: #67c23a;
 $warning: #e6a23c;
 $danger: #f56c6c; // $small-font-size: 12px;
+$activePrimary: #3681df;
+$activeSuccess: #53a534;
+$activeWarning: #c88838;
+$activeDanger: #d75959;
 
 .my-button + .my-button {
   margin-left: 1em;
@@ -91,10 +95,9 @@ $danger: #f56c6c; // $small-font-size: 12px;
   justify-content: center;
   align-items: center;
   vertical-align: middle;
-
+  border: 1px solid #dcdfe6;
   outline: none;
   &:not(:disabled):hover,
-  &:not(:disabled):active,
   &:not(:disabled).loading,
   &:not(:disabled):focus {
     opacity: 0.8;
@@ -104,35 +107,60 @@ $danger: #f56c6c; // $small-font-size: 12px;
     opacity: 0.5;
     cursor: not-allowed;
   }
+
   &.default {
     background: #fff;
     color: $color;
-    border: 1px solid #dcdfe6;
     &:not(:disabled):hover,
     &:not(:disabled):focus,
-    &:not(:disabled).loading,
-    &:not(:disabled):active {
-      color: #409eff;
+    &:not(:disabled).loading {
+      color: $primary;
       background: #ecf5ff;
       border-color: #b3d8ff;
+      opacity: 1;
+    }
+    &:not(:disabled):active {
+      color: $activePrimary;
+      border-color: $activePrimary;
+      background: #ecf5ff;
       opacity: 1;
     }
   }
   &.primary {
     background: $primary;
-    border: 1px solid $primary;
+    border-color: $primary;
+    &:not(:disabled):active {
+      background: $activePrimary;
+      border-color: $activePrimary;
+      opacity: 1;
+    }
   }
   &.success {
     background: $success;
-    border: 1px solid $success;
+    border-color: $success;
+    &:not(:disabled):active {
+      background: $activeSuccess;
+      border-color: $activeSuccess;
+      opacity: 1;
+    }
   }
   &.warning {
     background: $warning;
-    border: 1px solid $warning;
+    border-color: $warning;
+    &:not(:disabled):active {
+      background: $activeWarning;
+      border-color: $activeWarning;
+      opacity: 1;
+    }
   }
   &.danger {
     background: $danger;
-    border: 1px solid $danger;
+    border-color: $danger;
+    &:not(:disabled):active {
+      background: $activeDanger;
+      border-color: $activeDanger;
+      opacity: 1;
+    }
   }
 
   &.loading {
