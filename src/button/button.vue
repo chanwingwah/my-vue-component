@@ -69,18 +69,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$border-radius: 4px;
-$color: #606266;
-$font-size: 14px;
-$primary: #409eff;
-$success: #67c23a;
-$warning: #e6a23c;
-$danger: #f56c6c; // $small-font-size: 12px;
-$activePrimary: #3681df;
-$activeSuccess: #53a534;
-$activeWarning: #c88838;
-$activeDanger: #d75959;
-
+@import "variables";
 .my-button + .my-button {
   margin-left: 1em;
 }

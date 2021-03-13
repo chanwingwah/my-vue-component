@@ -43,6 +43,10 @@ module.exports = {
     ]
   },
   scss:{
+    sassOptions: {
+      includePaths: [path.join(__dirname, "../../styles")]
+    }
+    // 构建时会报错
     // includePaths: [path.join(__dirname, '../../styles')]
   }
 }

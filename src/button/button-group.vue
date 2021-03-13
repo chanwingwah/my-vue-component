@@ -20,7 +20,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$border-radius: 4px;
+@import "variables";
 .my-button + .my-button-group {
   margin-left: 1em;
 }
