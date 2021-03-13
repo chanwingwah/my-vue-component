@@ -10,12 +10,17 @@ export default {
         "自动关闭事件 假如传入 true ，则为默认时间, 传入false或者0， 则不会自动关闭"
     }
   },
+  data() {
+    return {
+      verticalOffset: 0
+    };
+  },
   computed: {
     style() {
       return {
         position: "fixed",
         right: "20px",
-        bottom: "20px"
+        bottom: `${this.verticalOffset}px`
       };
     },
     autoCloseTime() {

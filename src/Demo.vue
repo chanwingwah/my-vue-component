@@ -2,8 +2,10 @@
   <div id="app">
     <!-- <my-icon name="loading"></my-icon> -->
     <my-button icon="loading">按钮</my-button>
-    <my-button type="primary" @click="notify">notify</my-button>
-    <my-button type="success">按钮</my-button>
+    <my-button type="primary" @click="notify">notification</my-button>
+    <my-button type="success" @click="notify({ autoClose: false })"
+      >notification不自动关</my-button
+    >
     <my-button type="primary" loading>按钮</my-button>
     <my-button loading>按钮</my-button>
     <my-button icon="edit">按钮</my-button>
@@ -24,8 +26,8 @@ export default {
   name: "Demo",
   components: {},
   methods: {
-    notify() {
-      this.$notify();
+    notify(options = {}) {
+      this.$notify(options);
     }
   }
 };

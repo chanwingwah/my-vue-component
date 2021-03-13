@@ -2,6 +2,35 @@ import Vue from "vue";
 import Notification from "./func-notification";
 
 const NotificationConstructor = Vue.extend(Notification);
+// 实例栈 用来多个实例处理位置逻辑
+const instanceArr = [];
+let seed = 1;
+
+// 计算位置
+const beforeAddInstance = instance => {
+  instance.id = `my_notification_${seed++}`;
+  var verticalOffset = 20;
+  instanceArr.forEach(item => {
+    verticalOffset += item.$el.offsetHeight + 20;
+  });
+  instance.verticalOffset = verticalOffset;
+  instanceArr.push(instance);
+};
+
+// 关闭时，需要维护位置信息
+const beforeRemoveInstance = instance => {
+  if (!instance) return;
+  const len = instanceArr.length;
+  const index = instanceArr.findIndex(inst => instance.id === inst.id);
+  instanceArr.splice(index, 1);
+  if (len <= 1) return;
+  const removeHeight = instance.$el.offsetHeight;
+  // 位置顺移
+  for (let i = index; i < len - 1; i++) {
+    instanceArr[i].verticalOffset =
+      parseInt(instanceArr[i].verticalOffset) - removeHeight - 20;
+  }
+};
 
 const removeInstance = instance => {
   if (!instance) return;
@@ -13,12 +42,14 @@ const notify = propsData => {
   const instance = new NotificationConstructor({
     propsData
   });
+  beforeAddInstance(instance);
   // 手动挂载
   instance.$mount();
   document.body.appendChild(instance.$el);
+  // 计算相关位置
   // 绑定关闭按钮事件
   instance.$on("close", () => {
-    // instance.visible = false;
+    beforeRemoveInstance(instance);
     removeInstance(instance);
   });
   return instance;
