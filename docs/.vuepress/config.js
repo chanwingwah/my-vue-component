@@ -1,5 +1,8 @@
 const path = require('path')
 module.exports = {
+  head: [
+    ['link', { rel: 'shortcut icon', type: "image/x-icon", href: `./favicon.ico` }]
+  ],
   markdown: {
     lineNumbers: true,
     plugins: [
