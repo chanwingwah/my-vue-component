@@ -26,5 +26,9 @@ export default {
 <style lang="scss" scoped>
 div.wrapper {
   margin-top: 10px;
+  .my-button-group {
+    margin-bottom: 10px;
+    margin-right: 1em;
+  }
 }
 </style>

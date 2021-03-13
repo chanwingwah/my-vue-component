@@ -20,5 +20,10 @@ export default {
 <style lang="scss" scoped>
 div.wrapper {
   margin-top: 10px;
+  .my-button {
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 1em;
+  }
 }
 </style>
