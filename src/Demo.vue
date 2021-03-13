@@ -14,6 +14,9 @@
       <my-button icon="edit">按钮2</my-button>
       <my-button disabled>按钮3</my-button>
     </MyButtonGroup>
+    <p>
+      <MyNotification></MyNotification>
+    </p>
   </div>
 </template>
 <script>
