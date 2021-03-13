@@ -1,5 +1,5 @@
 <template>
-  <div class="my-notification">
+  <div class="my-notification" v-show="visible" :style="style">
     <h2 class="title">{{ title }}</h2>
     <div class="content">
       <p>
@@ -32,7 +32,13 @@ export default {
       visible: true
     };
   },
-  computed: {},
+  computed: {
+    style() {
+      return {
+        position: "relative"
+      };
+    }
+  },
   methods: {
     handleClose() {
       this.$emit("close");
@@ -51,7 +57,6 @@ export default {
   background-color: #fff;
   padding: 14px 26px 14px 13px;
   box-shadow: $shadow;
-  position: relative;
 }
 .title {
   font-weight: 700;
