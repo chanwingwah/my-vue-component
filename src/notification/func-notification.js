@@ -36,7 +36,7 @@ export default {
   methods: {
     createTimer(time) {
       this.timer = setTimeout(() => {
-        this.visible = false;
+        this.handleClose();
       }, time);
     },
     clearTimer() {
