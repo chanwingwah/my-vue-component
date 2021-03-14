@@ -24,7 +24,7 @@ const beforeRemoveInstance = instance => {
   const index = instanceArr.findIndex(inst => instance.id === inst.id);
   instanceArr.splice(index, 1);
   if (len <= 1) return;
-  const removeHeight = instance.$el.offsetHeight;
+  const removeHeight = instance.height;
   // 位置顺移
   for (let i = index; i < len - 1; i++) {
     instanceArr[i].verticalOffset =
@@ -42,15 +42,19 @@ const notify = propsData => {
   const instance = new NotificationConstructor({
     propsData
   });
+  // 计算相关位置
   beforeAddInstance(instance);
   // 手动挂载
   instance.$mount();
   document.body.appendChild(instance.$el);
-  // 计算相关位置
+  instance.visible = true;
   // 绑定关闭按钮事件
+  instance.$on("closed", () => {
+    removeInstance(instance);
+  });
   instance.$on("close", () => {
     beforeRemoveInstance(instance);
-    removeInstance(instance);
+    instance.visible = false;
   });
   return instance;
 };

@@ -1,5 +1,5 @@
 import Notification from "./notification.vue";
-const defaultCloseTime = 3000;
+const defaultCloseTime = 5000;
 export default {
   extends: Notification,
   props: {
@@ -8,11 +8,16 @@ export default {
       default: defaultCloseTime,
       des:
         "自动关闭事件 假如传入 true ，则为默认时间, 传入false或者0， 则不会自动关闭"
+    },
+    zIndex: {
+      type: Number,
+      default: 100
     }
   },
   data() {
     return {
-      verticalOffset: 0
+      verticalOffset: 0,
+      visible: false
     };
   },
   computed: {
@@ -20,6 +25,7 @@ export default {
       return {
         position: "fixed",
         right: "20px",
+        zIndex: this.zIndex,
         bottom: `${this.verticalOffset}px`
       };
     },

@@ -7,7 +7,7 @@
       >notification不自动关</my-button
     >
     <my-button type="primary" loading>按钮</my-button>
-    <my-button loading>按钮</my-button>
+    <my-button @click="toggleShow">按钮2</my-button>
     <my-button icon="edit">按钮</my-button>
     <my-button disabled>按钮</my-button>
     <my-button disabled type="primary">按钮</my-button>
@@ -17,7 +17,7 @@
       <my-button disabled>按钮3</my-button>
     </MyButtonGroup>
     <p>
-      <MyNotification content="自定义内容"></MyNotification>
+      <MyNotification v-show="this.show" content="自定义内容"></MyNotification>
     </p>
   </div>
 </template>
@@ -25,9 +25,17 @@
 export default {
   name: "Demo",
   components: {},
+  data() {
+    return {
+      show: true
+    };
+  },
   methods: {
     notify(options = {}) {
       this.$notify(options);
+    },
+    toggleShow() {
+      this.show = !this.show;
     }
   }
 };

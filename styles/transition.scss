@@ -1,0 +1,20 @@
+// global transition css
+
+/* fade-right */
+.fade-right-enter-active,
+.fade-right-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+  }
+
+.fade-right-enter{
+  transform: translateX(120%);
+}
+.fade-right-enter,
+.fade-right-leave-to {
+  opacity: 0;
+}
+.fade-right-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+

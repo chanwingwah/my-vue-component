@@ -1,13 +1,19 @@
 <template>
-  <div class="my-notification" v-show="visible" :style="style">
-    <h2 class="title">{{ title }}</h2>
-    <div class="content">
-      <p>
-        {{ content }}
-      </p>
+  <transition
+    name="fade-right"
+    @after-leave="afterLeave"
+    @after-enter="afterEnter"
+  >
+    <div class="my-notification" v-show="visible" :style="style">
+      <h2 class="title">{{ title }}</h2>
+      <div class="content">
+        <p>
+          {{ content }}
+        </p>
+      </div>
+      <MyIcon name="close" className="close" @click="handleClose"></MyIcon>
     </div>
-    <MyIcon name="close" className="close" @click="handleClose"></MyIcon>
-  </div>
+  </transition>
 </template>
 <script>
 import MyIcon from "../icon/icon.vue";
@@ -29,7 +35,9 @@ export default {
   },
   data() {
     return {
-      visible: true
+      visible: true,
+      zIndex: 100,
+      height: 0 // 计算偏移高度
     };
   },
   computed: {
@@ -42,10 +50,20 @@ export default {
   methods: {
     handleClose() {
       this.$emit("close");
+    },
+    afterLeave() {
+      // 添加closed状态， 提醒销毁dom
+      this.$emit("closed");
+    },
+    afterEnter() {
+      this.height = this.$el.offsetHeight;
     }
   }
 };
 </script>
+<style lang="scss">
+@import "transition";
+</style>
 <style lang="scss" scoped>
 @import "variables";
 .my-notification {
@@ -57,6 +75,8 @@ export default {
   background-color: #fff;
   padding: 14px 26px 14px 13px;
   box-shadow: $shadow;
+  transition: opacity 0.3s, transform 0.3s, left 0.3s, right 0.3s, top 0.4s,
+    bottom 0.3s;
 }
 .title {
   font-weight: 700;
