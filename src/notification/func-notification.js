@@ -3,7 +3,7 @@ const defaultCloseTime = 5000;
 export default {
   extends: Notification,
   props: {
-    autoClose: {
+    duration: {
       type: [Number, Boolean],
       default: defaultCloseTime,
       des:
@@ -34,13 +34,13 @@ export default {
       };
     },
     autoCloseTime() {
-      if (this.autoClose === false) {
+      if (this.duration === false) {
         return 0;
       }
-      if (this.autoClose === true) {
+      if (this.duration === true) {
         return defaultCloseTime;
       }
-      return this.autoClose;
+      return this.duration;
     }
   },
   mounted() {

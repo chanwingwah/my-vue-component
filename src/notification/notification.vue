@@ -4,7 +4,12 @@
     @after-leave="afterLeave"
     @after-enter="afterEnter"
   >
-    <div class="my-notification" v-show="visible" :style="style">
+    <div
+      class="my-notification"
+      v-show="visible"
+      :style="style"
+      @click="onClick"
+    >
       <div class="notification-type" v-if="type">
         <MyIcon :name="iconName" :type="type" className="icon-style"></MyIcon>
       </div>
@@ -63,12 +68,21 @@ export default {
           "bottom-left"
         ].includes(value);
       }
+    },
+    onClick: {
+      default: () => {
+        //
+      },
+      type: Function
+    },
+    onClose: {
+      default: undefined,
+      type: Function
     }
   },
   data() {
     return {
       visible: true,
-      zIndex: 100,
       height: 0 // 计算偏移高度
     };
   },
@@ -101,6 +115,9 @@ export default {
   methods: {
     handleClose() {
       this.$emit("close");
+      if (this.onClose) {
+        this.onClose();
+      }
     },
     afterLeave() {
       // 添加closed状态， 提醒销毁dom
@@ -117,8 +134,9 @@ export default {
 </style>
 <style lang="scss" scoped>
 @import "variables";
+
 .my-notification {
-  display: flex;
+  display: inline-flex;
   text-align: left;
   width: 340px;
   border-radius: 8px;

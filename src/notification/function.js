@@ -56,6 +56,10 @@ const notify = propsData => {
     beforeRemoveInstance(instance);
     instance.visible = false;
   });
+
+  instance.close = () => {
+    this.$emit("close");
+  };
   return instance;
 };
 
@@ -69,5 +73,12 @@ types.forEach(type => {
     notify(propsData);
   };
 });
+
+notify.closeAll = () => {
+  instanceArr.forEach(item => {
+    item.$emit("closed");
+  });
+  instanceArr.length = 0;
+};
 
 export default notify;
