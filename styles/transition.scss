@@ -18,3 +18,21 @@
   transform: translateX(30px);
 }
 
+/* fade-left */
+.fade-left-enter-active,
+.fade-left-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+  }
+
+.fade-left-enter{
+  transform: translateX(-120%);
+}
+.fade-left-enter,
+.fade-left-leave-to {
+  opacity: 0;
+}
+.fade-left-leave-to {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+

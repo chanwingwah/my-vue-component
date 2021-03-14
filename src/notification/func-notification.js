@@ -24,9 +24,13 @@ export default {
     style() {
       return {
         position: "fixed",
-        right: "20px",
+        right: this.position.match("right") ? "20px" : "unset",
+        left: this.position.match("left") ? "20px" : "unset",
         zIndex: this.zIndex,
-        bottom: `${this.verticalOffset}px`
+        bottom: this.position.match("bottom")
+          ? `${this.verticalOffset}px`
+          : "unset",
+        top: this.position.match("top") ? `${this.verticalOffset}px` : "unset"
       };
     },
     autoCloseTime() {

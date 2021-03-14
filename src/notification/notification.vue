@@ -1,6 +1,6 @@
 <template>
   <transition
-    name="fade-right"
+    :name="transitionName"
     @after-leave="afterLeave"
     @after-enter="afterEnter"
   >
@@ -50,6 +50,19 @@ export default {
     showClose: {
       type: Boolean,
       default: true
+    },
+    position: {
+      // top-right top-left bottom-right bottom-left 默认 bottom-right
+      type: String,
+      default: "top-right",
+      validator(value) {
+        return [
+          "top-right",
+          "top-left",
+          "bottom-right",
+          "bottom-left"
+        ].includes(value);
+      }
     }
   },
   data() {
@@ -77,6 +90,12 @@ export default {
         return icon;
       }
       return icon + this.type;
+    },
+    transitionName() {
+      if (this.position.match("right")) {
+        return "fade-right";
+      }
+      return "fade-left";
     }
   },
   methods: {
