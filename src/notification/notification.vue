@@ -175,6 +175,8 @@ export default {
   font-size: 16px;
   color: #303133;
   margin: 0;
+  padding-bottom: 0;
+  border-bottom: 0px solid #eaecef;
 }
 .message {
   font-size: 14px;
