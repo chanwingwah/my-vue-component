@@ -59,4 +59,15 @@ const notify = propsData => {
   return instance;
 };
 
+// ['success', 'info','warning', 'error']
+const types = ["success", "info", "warning", "error"];
+types.forEach(type => {
+  notify[type] = propsData => {
+    propsData = Object.assign({}, propsData, {
+      type: type
+    });
+    notify(propsData);
+  };
+});
+
 export default notify;

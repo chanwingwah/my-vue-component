@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "13519423",
+      "name": "info",
+      "font_class": "circle-info",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "13519527",
+      "name": "warning",
+      "font_class": "circle-warning",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
       "icon_id": "13519585",
       "name": "moon-night",
       "font_class": "moon-night",

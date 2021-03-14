@@ -5,13 +5,23 @@
     @after-enter="afterEnter"
   >
     <div class="my-notification" v-show="visible" :style="style">
-      <h2 class="title">{{ title }}</h2>
-      <div class="content">
-        <p>
-          {{ content }}
-        </p>
+      <div class="notification-type" v-if="type">
+        <MyIcon :name="iconName" :type="type" className="icon-style"></MyIcon>
       </div>
-      <MyIcon name="close" className="close" @click="handleClose"></MyIcon>
+      <div class="notification-content">
+        <h2 class="title">{{ title }}</h2>
+        <div class="message">
+          <p>
+            {{ message }}
+          </p>
+        </div>
+      </div>
+      <MyIcon
+        v-if="showClose"
+        name="close"
+        className="close"
+        @click="handleClose"
+      ></MyIcon>
     </div>
   </transition>
 </template>
@@ -24,13 +34,22 @@ export default {
     MyIcon
   },
   props: {
-    content: {
+    message: {
       type: String,
       default: "请输入提示内容"
     },
     title: {
       type: String,
       default: "提示"
+    },
+    type: {
+      //  ['success', 'info','warning', 'error']
+      type: String,
+      default: undefined
+    },
+    showClose: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
@@ -45,6 +64,19 @@ export default {
       return {
         position: "relative"
       };
+    },
+    iconName() {
+      let icon = "circle-";
+      if (this.type === "success") {
+        icon += "check";
+
+        return icon;
+      }
+      if (this.type === "error") {
+        icon += "close";
+        return icon;
+      }
+      return icon + this.type;
     }
   },
   methods: {
@@ -67,6 +99,7 @@ export default {
 <style lang="scss" scoped>
 @import "variables";
 .my-notification {
+  display: flex;
   text-align: left;
   width: 340px;
   border-radius: 8px;
@@ -78,13 +111,35 @@ export default {
   transition: opacity 0.3s, transform 0.3s, left 0.3s, right 0.3s, top 0.4s,
     bottom 0.3s;
 }
+.notification-type {
+  flex-shrink: 0;
+  padding-right: 10px;
+  .icon-style {
+    font-size: 25px;
+    &[type="success"] {
+      color: $success;
+    }
+    &[type="info"] {
+      color: $info;
+    }
+    &[type="warning"] {
+      color: $warning;
+    }
+    &[type="error"] {
+      color: $danger;
+    }
+  }
+}
+.notification-content {
+  flex-grow: 1;
+}
 .title {
   font-weight: 700;
   font-size: 16px;
   color: #303133;
   margin: 0;
 }
-.content {
+.message {
   font-size: 14px;
   line-height: 21px;
   margin: 6px 0 0;

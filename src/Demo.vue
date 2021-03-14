@@ -17,7 +17,14 @@
       <my-button disabled>按钮3</my-button>
     </MyButtonGroup>
     <p>
-      <MyNotification v-show="this.show" content="自定义内容"></MyNotification>
+      <MyNotification
+        v-show="this.show"
+        type="success"
+        message="自定义内容"
+      ></MyNotification>
+      <MyNotification type="info" message="自定义内容"></MyNotification>
+      <MyNotification type="warning" message="自定义内容"></MyNotification>
+      <MyNotification type="error" message="自定义内容"></MyNotification>
     </p>
   </div>
 </template>
@@ -32,7 +39,7 @@ export default {
   },
   methods: {
     notify(options = {}) {
-      this.$notify(options);
+      this.$notify.success(options);
     },
     toggleShow() {
       this.show = !this.show;
