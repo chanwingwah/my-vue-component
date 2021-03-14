@@ -36,7 +36,8 @@ module.exports = {
         collapsable: false,
         children: [
           '/components/icon',
-          '/components/button'
+          '/components/button',
+          '/components/notification'
         ]
       },
 
