@@ -55,14 +55,13 @@ export default {
 <style lang="scss" scoped>
 @import "variables";
 
-.tab {
+li.tab {
   padding: 0 20px;
   list-style: none;
   line-height: 40px;
   position: relative;
   cursor: pointer;
   font-size: 14px;
-
   &:active {
     color: $activePrimary;
     background: #ecf5ff;

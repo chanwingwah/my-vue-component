@@ -40,11 +40,14 @@ export default {
   },
   mounted() {
     this.$slots.default.forEach((vm, index) => {
+      if (!vm.componentInstance) {
+        return;
+      }
       vm.componentInstance.domIndex = index + 1;
       this.panes.push(vm.componentInstance);
     });
     if (!this.value) {
-      this.innerValue = this.panes[0].name;
+      this.innerValue = this.panes[0].tabName;
     }
   },
   methods: {
