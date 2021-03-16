@@ -26,6 +26,9 @@
       <MyNotification type="warning" message="自定义内容"></MyNotification>
       <MyNotification type="error" message="自定义内容"></MyNotification>
     </p>
+    <p>
+      <MySkeleton style="width:1000px;margin:0 auto"></MySkeleton>
+    </p>
   </div>
 </template>
 <script>

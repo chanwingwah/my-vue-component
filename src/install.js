@@ -5,10 +5,17 @@ import {
   MyButton,
   MyButtonGroup,
   MyNotification,
-  notify
+  notify,
+  MySkeleton
 } from "./index";
 
-const components = [MyIcon, MyButton, MyButtonGroup, MyNotification];
+const components = [
+  MyIcon,
+  MyButton,
+  MyButtonGroup,
+  MyNotification,
+  MySkeleton
+];
 
 const install = function(Vue) {
   components.map(component => {
