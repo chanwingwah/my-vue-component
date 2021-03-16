@@ -12,13 +12,14 @@ export default {
   props: {
     value: {
       type: [String, Number],
+      default: 2,
       require: false
     }
   },
   data() {
     return {
       panes: [],
-      innerValue: 1
+      innerValue: undefined
     };
   },
   computed: {
@@ -35,19 +36,22 @@ export default {
       };
     },
     currentValue() {
-      return this.value || this.innerValue;
+      return this.innerValue || this.value;
     }
   },
   mounted() {
-    this.$slots.default.forEach((vm, index) => {
+    let index = 1;
+    this.$slots.default.forEach(vm => {
       if (!vm.componentInstance) {
         return;
       }
-      vm.componentInstance.domIndex = index + 1;
+      vm.componentInstance.domIndex = index++;
       this.panes.push(vm.componentInstance);
     });
     if (!this.value) {
       this.innerValue = this.panes[0].tabName;
+    } else {
+      this.innerValue = this.value;
     }
   },
   methods: {
