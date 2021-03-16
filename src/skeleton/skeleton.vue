@@ -33,8 +33,8 @@ export default {
 <style lang="scss" scoped>
 .my-skeleton {
   background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 16px;
+  margin-bottom: 16px;
 }
 .skeleton-title {
   margin-bottom: 20px;
