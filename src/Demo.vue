@@ -29,6 +29,26 @@
     <p>
       <MySkeleton style="width:1000px;margin:0 auto"></MySkeleton>
     </p>
+    <p>
+      <input type="text" v-model="inputValue" />
+    </p>
+    <p>
+      <my-tabs style="width:1000px;margin:0 auto">
+        <my-tab name="first">
+          <template v-slot:label>
+            <span>Tsab1</span>
+            <my-icon name="setting"></my-icon>
+          </template>
+          <p>{{ inputValue }}</p>
+        </my-tab>
+        <my-tab label="Tab2" name="second">
+          <my-button type="primary">按钮</my-button>
+        </my-tab>
+        <my-tab label="Tab3" disabled name="third">
+          <p>This is a tab content3</p>
+        </my-tab>
+      </my-tabs>
+    </p>
   </div>
 </template>
 <script>
@@ -37,7 +57,9 @@ export default {
   components: {},
   data() {
     return {
-      show: true
+      show: true,
+      TabValue: "first",
+      inputValue: "32131"
     };
   },
   methods: {

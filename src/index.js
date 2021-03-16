@@ -5,3 +5,5 @@ export { default as MyNotification } from "./notification/notification";
 export { default as Notification } from "./notification/function.js";
 export { default as notify } from "./notification";
 export { default as MySkeleton } from "./skeleton/skeleton";
+export { default as MyTab } from "./tabs/tab";
+export { default as MyTabs } from "./tabs/tabs";

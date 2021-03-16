@@ -6,7 +6,9 @@ import {
   MyButtonGroup,
   MyNotification,
   notify,
-  MySkeleton
+  MySkeleton,
+  MyTab,
+  MyTabs
 } from "./index";
 
 const components = [
@@ -14,7 +16,9 @@ const components = [
   MyButton,
   MyButtonGroup,
   MyNotification,
-  MySkeleton
+  MySkeleton,
+  MyTab,
+  MyTabs
 ];
 
 const install = function(Vue) {
