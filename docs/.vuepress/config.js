@@ -39,6 +39,7 @@ module.exports = {
           '/components/button',
           '/components/notification',
           '/components/skeleton',
+          '/components/tabs',
         ]
       },
 

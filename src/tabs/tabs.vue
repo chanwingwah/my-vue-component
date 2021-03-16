@@ -46,6 +46,9 @@ export default {
         return;
       }
       vm.componentInstance.domIndex = index++;
+      if (!vm.componentInstance.name) {
+        vm.componentInstance.name = vm.componentInstance.domIndex;
+      }
       this.panes.push(vm.componentInstance);
     });
     if (!this.value) {

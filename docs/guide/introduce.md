@@ -41,7 +41,7 @@ title: 介绍
 - [x] notification 组件
 - [ ] message 组件
 - [x] skeleton 骨架屏组件
-- [ ] tabs 组件
+- [x] tabs 组件
 - [ ] 更多……
  
 
