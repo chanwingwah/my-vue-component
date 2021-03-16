@@ -1,6 +1,6 @@
 {
   "name": "@chanwingwah/my-vue-component",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "一个vue组件实践项目",
   "main": "dist/myComponent.umd.min.js",
   "jsnext:main": "src/index.js",
@@ -46,5 +46,5 @@
   "bugs": {
     "url": "https://github.com/chanwingwah/my-vue-component/issues"
   },
-  "homepage": "https://github.com/chanwingwah/my-vue-component#readme"
+  "homepage": "http://ui.chanwingwah.info/"
 }
