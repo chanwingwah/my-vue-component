@@ -9,7 +9,7 @@ module.exports = {
       'markdown-it-task-lists'
     ]
   },
-  base: '/my-vue-component/',
+  // base: '/my-vue-component/',
   title: 'Simple UI ',
   description: '一个的UI框架实践',  
   themeConfig: {
@@ -37,7 +37,8 @@ module.exports = {
         children: [
           '/components/icon',
           '/components/button',
-          '/components/notification'
+          '/components/notification',
+          '/components/skeleton',
         ]
       },
 

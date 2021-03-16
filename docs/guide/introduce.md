@@ -2,7 +2,7 @@
 title: 介绍
 ---
 <p align="center" style="display:flex;justify-content:center">
-  <img height="200px" src="/my-vue-component/assets/images/moon-night.svg">
+  <img height="200px" src="/assets/images/moon-night.svg">
 </p>
 <h1 align="center" >Simple UI</h1> 
 
@@ -38,8 +38,9 @@ title: 介绍
 - [ ] 打包优化
 - [ ] 添加开发日志模块
 - [x] 按钮组件
-- [ ] notification 组件
+- [x] notification 组件
 - [ ] message 组件
+- [x] skeleton 骨架屏组件
 - [ ] tabs 组件
 - [ ] 更多……
  
