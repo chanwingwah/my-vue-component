@@ -46,7 +46,7 @@ export default {
     type: {
       //  ['success', 'info','warning', 'error']
       type: String,
-      default: undefined
+      default: "info"
     },
     showClose: {
       type: Boolean,
@@ -142,7 +142,7 @@ export default {
   }
   &[type="info"] {
     color: $info;
-    background: $successBg;
+    background: $infoBg;
   }
   &[type="warning"] {
     color: $warning;

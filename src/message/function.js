@@ -47,6 +47,13 @@ const removeInstance = instance => {
 };
 
 const message = propsData => {
+  if (typeof propsData === "string") {
+    let msg = propsData;
+    propsData = {
+      message: msg,
+      type: "info"
+    };
+  }
   const instance = new MessageConstructor({
     propsData
   });
@@ -75,6 +82,12 @@ const message = propsData => {
 const types = ["success", "info", "warning", "error"];
 types.forEach(type => {
   message[type] = propsData => {
+    if (typeof propsData === "string") {
+      let msg = propsData;
+      propsData = {
+        message: msg
+      };
+    }
     propsData = Object.assign({}, propsData, {
       type: type
     });
