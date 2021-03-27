@@ -22,7 +22,7 @@
         type="success"
         message="自定义内容"
       ></MyNotification>
-      <MyNotification type="info" message="自定义内容"></MyNotification>
+      <MyNotification v-wave type="info" message="自定义内容"></MyNotification>
       <MyNotification type="warning" message="自定义内容"></MyNotification>
       <MyNotification type="error" message="自定义内容"></MyNotification>
     </p>

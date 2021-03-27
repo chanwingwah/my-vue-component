@@ -8,7 +8,8 @@ import {
   notify,
   MySkeleton,
   MyTab,
-  MyTabs
+  MyTabs,
+  wave
 } from "./index";
 
 const components = [
@@ -28,5 +29,6 @@ const install = function(Vue) {
 };
 
 Vue.use(notify);
+Vue.use(wave);
 
 install(Vue);

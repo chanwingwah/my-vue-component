@@ -1,0 +1,15 @@
+.my-directive-ripple {
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+    /* background: rgba(255, 255, 255, 0.5); */
+    transform: scale(0);
+    pointer-events: none;
+    transition: transform 0.6s linear, opacity 0.6s linear;
+}
+
+.my-directive-ripple.animated {
+    opacity: 0;
+    transform: scale(2.5);
+}
