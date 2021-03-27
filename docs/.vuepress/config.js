@@ -42,7 +42,13 @@ module.exports = {
           '/components/tabs',
         ]
       },
-
+      {
+        title: '指令',
+        collapsable: false,
+        children: [
+          '/directive/wave',
+        ]
+      },
     ]
   },
   scss:{

@@ -42,6 +42,7 @@ title: 介绍
 - [ ] message 组件
 - [x] skeleton 骨架屏组件
 - [x] tabs 组件
+- [x] 水波纹指令
 - [ ] 更多……
  
 
