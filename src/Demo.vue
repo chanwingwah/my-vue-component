@@ -3,7 +3,7 @@
     <!-- <my-icon name="loading"></my-icon> -->
     <my-button icon="loading">按钮</my-button>
     <my-button type="primary" @click="notify">notification</my-button>
-    <my-button type="success" @click="notify({ autoClose: false })"
+    <my-button type="success" @click="notify({ duration: false })"
       >notification不自动关</my-button
     >
     <my-button type="primary" loading>按钮</my-button>
@@ -25,6 +25,15 @@
       <MyNotification v-wave type="info" message="自定义内容"></MyNotification>
       <MyNotification type="warning" message="自定义内容"></MyNotification>
       <MyNotification type="error" message="自定义内容"></MyNotification>
+    </p>
+    <p>
+      <MyMessage type="info" message="错了哦，这是一条错误消息"></MyMessage>
+      <MyMessage
+        type="success"
+        message="错了哦，这是一条错误消息,错了哦，这是一条错误消息,错了哦，这是一条错误消息"
+      ></MyMessage>
+      <MyMessage type="warning" message="错了哦，这是一条错误消息"></MyMessage>
+      <MyMessage type="error" message="错了哦，这是一条错误消息"></MyMessage>
     </p>
     <p>
       <MySkeleton style="width:1000px;margin:0 auto"></MySkeleton>

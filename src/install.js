@@ -6,6 +6,8 @@ import {
   MyButtonGroup,
   MyNotification,
   notify,
+  MyMessage,
+  message,
   MySkeleton,
   MyTab,
   MyTabs,
@@ -17,6 +19,7 @@ const components = [
   MyButton,
   MyButtonGroup,
   MyNotification,
+  MyMessage,
   MySkeleton,
   MyTab,
   MyTabs
@@ -29,6 +32,7 @@ const install = function(Vue) {
 };
 
 Vue.use(notify);
+Vue.use(message);
 Vue.use(wave);
 
 install(Vue);
