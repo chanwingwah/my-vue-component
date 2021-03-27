@@ -38,6 +38,7 @@ module.exports = {
           '/components/icon',
           '/components/button',
           '/components/notification',
+          '/components/message',
           '/components/skeleton',
           '/components/tabs',
         ]
