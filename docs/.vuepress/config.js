@@ -48,6 +48,7 @@ module.exports = {
         collapsable: false,
         children: [
           '/directive/wave',
+          '/directive/watermark',
         ]
       },
     ]

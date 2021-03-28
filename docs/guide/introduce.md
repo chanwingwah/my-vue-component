@@ -39,10 +39,12 @@ title: 介绍
 - [ ] 添加开发日志模块
 - [x] 按钮组件
 - [x] notification 组件
-- [ ] message 组件
+- [x] message 组件
 - [x] skeleton 骨架屏组件
 - [x] tabs 组件
 - [x] 水波纹指令
+- [x] 水印指令
+- [ ] 图片组件
 - [ ] 更多……
  
 

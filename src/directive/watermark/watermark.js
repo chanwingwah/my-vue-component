@@ -7,7 +7,7 @@ export default {
     function addWaterMarker(
       parentNode,
       text,
-      font,
+      font = "30px Microsoft JhengHei",
       color = "rgba(0, 0, 0, 0.04)",
       opacity = "1",
       rotate = -30,
@@ -24,7 +24,7 @@ export default {
       can.style.display = "none";
       var cans = can.getContext("2d");
       cans.rotate((rotate * Math.PI) / 180);
-      cans.font = font || "30px Microsoft JhengHei";
+      cans.font = font;
       cans.fillStyle = color;
       coverDom.style.opacity = opacity;
       cans.textAlign = "left";
