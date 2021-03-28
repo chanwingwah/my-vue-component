@@ -11,7 +11,8 @@ import {
   MySkeleton,
   MyTab,
   MyTabs,
-  wave
+  wave,
+  watermark
 } from "./index";
 
 const components = [
@@ -34,5 +35,6 @@ const install = function(Vue) {
 Vue.use(notify);
 Vue.use(message);
 Vue.use(wave);
+Vue.use(watermark);
 
 install(Vue);

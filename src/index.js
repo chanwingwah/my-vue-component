@@ -11,3 +11,4 @@ export { default as MySkeleton } from "./skeleton/skeleton";
 export { default as MyTab } from "./tabs/tab";
 export { default as MyTabs } from "./tabs/tabs";
 export { default as wave } from "./directive/wave";
+export { default as watermark } from "./directive/watermark";

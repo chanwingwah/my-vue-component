@@ -1,5 +1,11 @@
 <template>
-  <div id="app">
+  <div
+    id="app"
+    v-watermark="{
+      text: 'chanwingwah',
+      color: 'rgba(255, 0, 0, 0.1)'
+    }"
+  >
     <!-- <my-icon name="loading"></my-icon> -->
     <my-button icon="loading">按钮</my-button>
     <my-button type="primary" @click="notify">notification</my-button>
