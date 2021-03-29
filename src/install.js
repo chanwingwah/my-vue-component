@@ -12,7 +12,8 @@ import {
   MyTab,
   MyTabs,
   wave,
-  watermark
+  watermark,
+  MyImage
 } from "./index";
 
 const components = [
@@ -23,7 +24,8 @@ const components = [
   MyMessage,
   MySkeleton,
   MyTab,
-  MyTabs
+  MyTabs,
+  MyImage
 ];
 
 const install = function(Vue) {

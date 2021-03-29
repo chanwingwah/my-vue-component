@@ -12,3 +12,4 @@ export { default as MyTab } from "./tabs/tab";
 export { default as MyTabs } from "./tabs/tabs";
 export { default as wave } from "./directive/wave";
 export { default as watermark } from "./directive/watermark";
+export { default as MyImage } from "./image";
