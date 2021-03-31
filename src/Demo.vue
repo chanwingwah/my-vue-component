@@ -23,6 +23,7 @@
       <my-button disabled>按钮3</my-button>
     </MyButtonGroup>
     <p>
+      <my-image style="height:100px;width:100px"></my-image>
       <MyNotification
         v-show="this.show"
         type="success"
